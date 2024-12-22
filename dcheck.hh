@@ -14,10 +14,11 @@ namespace dcheck {
     auto help() -> void const;
 
     auto domain_checker(const char*) -> bool;
+    auto mout(int, const std::string&) -> void const;
 
     std::string m_locale {"en"};
   };
 
 }
 
-#endif // DOMAINCHECKER_HH
+#endif

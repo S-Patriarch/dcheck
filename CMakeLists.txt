@@ -9,6 +9,7 @@ set(SOURCES
   dcheck.cc
   logo.cc
   domain_checker.cc
+  mout.cc
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

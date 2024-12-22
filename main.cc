@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include "pl/pl.conio"
 #include "dcheck.hh"
 
 int main(int argc, char **argv)
@@ -14,10 +15,21 @@ int main(int argc, char **argv)
   using std::endl;
 
   std::vector<std::string> args(argv, argv+argc);
-
   dcheck::DomainChecker dch;
-  dch.logo();
-  cout << endl;
+
+  if (args.size()==2) {
+    cout << pl::mr::clrscr;
+    dch.logo();
+    cout << endl;
+
+  }
+  else {
+    cout << pl::mr::clrscr;
+    dch.logo();
+    cout << endl;
+    //dch.help();
+    cout << endl;
+  }
 
   std::exit(0);
 }

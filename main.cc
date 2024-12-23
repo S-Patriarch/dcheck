@@ -46,29 +46,30 @@ int main(int argc, char **argv)
 
                 std::string sline {};
                 timer.start();
-                while (!fs.eof()) {
-                    std::getline(fs, sline);
-
-                    bool is_res_check = dch.domain_checker(sline.c_str());
-                    if (is_res_check) {
-                        cout
-                            << "[  "
-                            << color.esc_tr(pl::Color::color::GREEN)
-                            << "OK"
-                            << color.esc_c()
-                            << "  ] "
-                            << sline
-                            << endl;
-                    }
+                while (std::getline(fs, sline)) {
+                    if (fs.eof()) break;
                     else {
-                        cout
-                            << "["
-                            << color.esc_tr(pl::Color::color::RED)
-                            << "FAILED"
-                            << color.esc_c()
-                            << "] "
-                            << sline
-                            << endl;
+                        bool is_res_check = dch.domain_checker(sline.c_str());
+                        if (is_res_check) {
+                            cout
+                                << "[  "
+                                << color.esc_tr(pl::Color::color::GREEN)
+                                << "OK"
+                                << color.esc_c()
+                                << "  ] "
+                                << sline
+                                << endl;
+                        }
+                        else {
+                            cout
+                                << "["
+                                << color.esc_tr(pl::Color::color::RED)
+                                << "FAILED"
+                                << color.esc_c()
+                                << "] "
+                                << sline
+                                << endl;
+                        }
                     }
                 }
                 timer.stop();

@@ -3,22 +3,22 @@
 
 namespace dcheck {
 
-  auto DomainChecker::mout(int status, const std::string& s)
-    -> void const
-  {
-    std::string message_status {};
+    auto DomainChecker::mout(int status, const std::string& message)
+        -> void const
+    {
+        std::string message_status {};
 
-    switch (status) {
-    case 0:  message_status = "W: "; break;
-    case 1:  message_status = "E: "; break;
-    default: message_status = "";    break;
+        switch (status) {
+        case 0:  message_status = "W: "; break;
+        case 1:  message_status = "E: "; break;
+        default: message_status = "";    break;
+        }
+
+        std::cout
+            << message_status
+            << message
+            << '\n'
+            << std::endl;
     }
-
-    std::cout
-      << message_status
-      << s
-      << '\n'
-      << std::endl;
-  }
 
 }

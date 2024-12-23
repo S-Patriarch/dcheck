@@ -5,19 +5,19 @@
 
 namespace dcheck {
 
-  class DomainChecker {
-  public:
-    DomainChecker();
-    ~DomainChecker();
+    class DomainChecker {
+    public:
+        DomainChecker();
+        ~DomainChecker();
 
-    auto logo() -> void const;
-    auto help() -> void const;
+        auto logo() -> void const;
+        auto help() -> void const;
 
-    auto domain_checker(const char*) -> bool;
-    auto mout(int, const std::string&) -> void const;
+        auto domain_checker(const char*) -> bool;
+        auto mout(int, const std::string&) -> void const;
 
-    std::string m_locale {"en"};
-  };
+        std::string m_locale {"en"};
+    };
 
 }
 
